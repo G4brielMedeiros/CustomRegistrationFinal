@@ -36,6 +36,7 @@ import com.liferay.portal.kernel.util.OrderByComparator;
 
 import java.io.Serializable;
 
+import java.util.Date;
 import java.util.List;
 
 import org.osgi.annotation.versioning.ProviderType;
@@ -76,6 +77,14 @@ public interface AccountLocalService
 	 */
 	@Indexable(type = IndexableType.REINDEX)
 	public Account addAccount(Account account);
+
+	public Account addAccount(
+			long groupId, String userName, String firstName, String lastName,
+			String emailAddress, boolean male, Date birthday, String password,
+			String homePhone, String mobilePhone, String address1,
+			String address2, String city, String state, String zipCode,
+			int securityQuestion, String securityAnswer, boolean acceptedTerms)
+		throws PortalException;
 
 	/**
 	 * Creates a new account with the primary key. Does not add the account to the database.

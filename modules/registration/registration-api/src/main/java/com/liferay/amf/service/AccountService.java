@@ -14,6 +14,7 @@
 
 package com.liferay.amf.service;
 
+import com.liferay.amf.model.Account;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.jsonwebservice.JSONWebService;
@@ -21,6 +22,8 @@ import com.liferay.portal.kernel.security.access.control.AccessControlled;
 import com.liferay.portal.kernel.service.BaseService;
 import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Transactional;
+
+import java.util.Date;
 
 import org.osgi.annotation.versioning.ProviderType;
 
@@ -47,6 +50,13 @@ public interface AccountService extends BaseService {
 	 *
 	 * Never modify this interface directly. Add custom service methods to <code>com.liferay.amf.service.impl.AccountServiceImpl</code> and rerun ServiceBuilder to automatically copy the method declarations to this interface. Consume the account remote service via injection or a <code>org.osgi.util.tracker.ServiceTracker</code>. Use {@link AccountServiceUtil} if injection and service tracking are not available.
 	 */
+	public Account addAccount(
+			long groupId, String userName, String firstName, String lastName,
+			String emailAddress, boolean male, Date birthday, String password,
+			String homePhone, String mobilePhone, String address1,
+			String address2, String city, String state, String zipCode,
+			int securityQuestion, String securityAnswer, boolean acceptTerms)
+		throws PortalException;
 
 	/**
 	 * Returns the OSGi service identifier.

@@ -59,6 +59,22 @@ public class AccountLocalServiceUtil {
 		return getService().addAccount(account);
 	}
 
+	public static Account addAccount(
+			long groupId, String userName, String firstName, String lastName,
+			String emailAddress, boolean male, java.util.Date birthday,
+			String password, String homePhone, String mobilePhone,
+			String address1, String address2, String city, String state,
+			String zipCode, int securityQuestion, String securityAnswer,
+			boolean acceptedTerms)
+		throws PortalException {
+
+		return getService().addAccount(
+			groupId, userName, firstName, lastName, emailAddress, male,
+			birthday, password, homePhone, mobilePhone, address1, address2,
+			city, state, zipCode, securityQuestion, securityAnswer,
+			acceptedTerms);
+	}
+
 	/**
 	 * Creates a new account with the primary key. Does not add the account to the database.
 	 *
