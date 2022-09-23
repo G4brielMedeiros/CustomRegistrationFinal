@@ -2,13 +2,13 @@
 <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
 
 <service-builder dependency-injector="ds" package-path="com.liferay.amf">
-	<namespace>FOO</namespace>
+	<namespace>Account</namespace>
 	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
-	<entity local-service="true" name="Foo" remote-service="true" uuid="true">
+	<entity local-service="true" name="Account" remote-service="true" uuid="true">
 
 		<!-- PK fields -->
 
-		<column name="fooId" primary="true" type="long" />
+		<column name="accountId" primary="true" type="long" />
 
 		<!-- Group instance -->
 
@@ -18,33 +18,22 @@
 
 		<column name="companyId" type="long" />
 		<column name="userId" type="long" />
-		<column name="userName" type="String" />
 		<column name="createDate" type="Date" />
 		<column name="modifiedDate" type="Date" />
 
 		<!-- Other fields -->
 
-		<column name="field1" type="String" />
-		<column name="field2" type="boolean" />
-		<column name="field3" type="int" />
-		<column name="field4" type="Date" />
-		<column name="field5" type="String" />
+		<column name="homePhone" type="String"/>
+		<column name="mobilePhone" type="String"/>
+		<column name="address1" type="String"/>
+		<column name="address2" type="String"/>
+		<column name="city" type="String"/>
+		<column name="state" type="String"/>
+		<column name="zipCode" type="String"/>
+		<column name="securityQuestion" type="int"/>
+		<column name="securityAnswer" type="String"/>
 
-		<!-- Order -->
+		<column name="acceptedTerms" type="boolean" />
 
-		<order by="asc">
-			<order-column name="field1" />
-		</order>
-
-		<!-- Finder methods -->
-
-		<finder name="Field2" return-type="Collection">
-			<finder-column name="field2" />
-		</finder>
-
-		<!-- References -->
-
-		<reference entity="AssetEntry" package-path="com.liferay.portlet.asset" />
-		<reference entity="AssetTag" package-path="com.liferay.portlet.asset" />
 	</entity>
 </service-builder>
