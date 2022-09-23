@@ -1,0 +1,9 @@
+apiDir: "../registration-rest-api/src/main/java"
+apiPackagePath: "com.liferay.amf"
+application:
+    baseURI: "/registration-rest"
+    className: "RegistrationRestApplication"
+    name: "RegistrationRest"
+author: "gabriel"
+clientDir: "../registration-rest-client/src/main/java"
+testDir: "../registration-rest-test/src/testIntegration/java"
